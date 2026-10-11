@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escritorio Hackeo</title>
+    <link rel="stylesheet" href="ini_style_2.css">
+    <link rel="stylesheet" href="ini_style.css">
+</head>
+<body>
+
+    <!-- PANTALLA DE INICIO CLÁSICA XP -->
+    <div id="boot-screen">
+        <div class="welcome-container">
+            <!-- Lado Izquierdo: Logo y texto -->
+            <div class="welcome-left">
+                <!-- Puedes cambiar 'img/winxp_logo.png' por tu propia imagen del logo -->
+                <img src="img/winxp_logo.png" alt="Logo" class="win-logo">
+                <p>Para empezar, haga clic en su nombre de usuario</p>
+            </div>
+            
+            <!-- Línea divisoria central -->
+            <div class="welcome-divider"></div>
+            
+            <!-- Lado Derecho: Usuarios -->
+            <div class="welcome-right">
+                <!-- Usuario 1 (Falso) -->
+                <div class="user-profile">
+                    <!-- Puedes usar tus propias imágenes para los avatares -->
+                    <img src="img/avatar_1.png" alt="Suno" class="user-avatar">
+                    <span class="user-name">Administrador</span>
+                </div>
+                
+                <!-- Usuario 2 (El que hay que pulsar) -->
+                <div class="user-profile clickable" onclick="iniciarSesion()">
+                    <img src="img/avatar_2.png" alt="Invitado" class="user-avatar">
+                    <span class="user-name">Invitado</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="welcome-top-bar"></div>
+        <div class="welcome-bottom-bar"></div>
+    </div>
+
+    <!-- EL ESCRITORIO (Oculto al principio) -->
+    <div id="desktop" style="display: none;">
+        <div class="desktop-icon" ondblclick="openWindow()">
+            <div class="icon-img-placeholder"></div>
+            <span>device_access.exe</span>
+        </div>
+
+        <div id="game-window" class="window">
+            <div class="title-bar">
+                <span class="title-text">Símbolo del sistema - device_access.exe</span>
+                <button class="close-btn" onclick="closeWindow()">X</button>
+            </div>
+            <div class="window-content">
+                <div id="monitor">
+                    <div id="glare"></div>
+                    <div id="interlaced"></div>
+                    <div id="terminal-content">
+                        <pre id="terminal-output"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="error-container"></div>
+    </div>
+
+    <div id="taskbar" style="display: none;">
+        <div id="start-btn"><i>Inicio</i></div>
+        <div id="system-tray"><span id="clock">3:37 AM</span></div>
+    </div>
+    <div id="flash-effect"></div>
+    <script src="ini_script.js"></script>
+</body>
+</html>
