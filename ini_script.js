@@ -1,6 +1,6 @@
-// ini_script.js - Flash Blanco, Modo Crítico y Retroceso Ilimitado
 
-const palabraClaveBase = "deactivate.module/"; 
+
+const palabraClaveBase = "DEACTIVATE.MODULE/"; 
 const tiempoTotalEspera = 300; 
 
 let faseActual = 1;
